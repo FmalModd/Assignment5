@@ -7,6 +7,8 @@
 /*
  * Facts:
  */
+ mysort([], []).
 /*
  * Rules:
  */
+ mysort() :- mysort().
