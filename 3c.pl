@@ -18,8 +18,8 @@
  * Facts:
  */
  mysplit([],[],[]).
- mysplit([X], [X], []).
- mysplit([X,Y], [X], [Y]).
+ mysplit([X],[X],[]).
+ mysplit([X,Y],[X],[Y]).
 /*
  * Rules:
  */
