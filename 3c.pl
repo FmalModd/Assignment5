@@ -18,8 +18,7 @@
  * Facts:
  */
  mysplit([],[],[]).
- mysplit([X], [X], []).
- mysplit([X,Y], [X], [Y]).
+ mysplit([X],[X],[]).
 /*
  * Rules:
  */
@@ -32,7 +31,4 @@
 /*
  * Rules:
  */
-/*
- * TODO RETURN ONLY ONE RESULT
- */
- mysort(X,Y) :- mysplit(X,L1,L2), mysort(L1, S1), mysort(L2, S2), merge(S1,S2,Y).
+ mysort([X1,X2|Xs],Y) :- mysplit([X1,X2|Xs],L1,L2), mysort(L1, S1), mysort(L2, S2), merge(S1,S2,Y).
