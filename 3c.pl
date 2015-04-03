@@ -32,7 +32,7 @@
 /*
  * Rules:
  */
- /*
-  * TODO RETURN ONLY ONE RESULT
-  */
+/*
+ * TODO RETURN ONLY ONE RESULT
+ */
  mysort(X,Y) :- mysplit(X,L1,L2), mysort(L1, S1), mysort(L2, S2), merge(S1,S2,Y).
