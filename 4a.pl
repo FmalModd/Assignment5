@@ -12,5 +12,4 @@
 /*
  * Rules:
  */
-
  binaryTree(t(_, L, R)) :- binaryTree(L), binaryTree(R).
