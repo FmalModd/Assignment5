@@ -5,12 +5,12 @@
  * Rules:
  */
  expr(X) :- term(X).
- expr([X,'+'|Xs]) :- term([X]), expr(Xs).
+ expr(X) :- append(Z, [+|Y], X), term(Z), expr(Y).
 /*
  * Rules:
  */
  term(X) :- factor(X).
- term([X,'*'|Xs]) :- factor([X]), term(Xs).
+ term(X) :- append(Z,[*|Y], X), factor(Z), term(Y).
 /*
  * Rules:
  */

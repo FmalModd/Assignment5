@@ -224,3 +224,22 @@
  leaves(t(_,L,nil), Xs) :- not(L = nil), leaves(L, Xs).
  leaves(t(_,nil,R), Xs) :- not(R = nil), leaves(R, Xs).
  leaves(t(_,L,R), Xs) :- not(L = nil), not(R = nil), leaves(L,Ls), leaves(R,Rs), append(Ls,Rs,Xs).
+
+/*
+ * Problem 5
+ */
+/*
+ * Rules:
+ */
+ expr(X) :- term(X).
+ expr(X) :- append(Z, [+|Y], X), term(Z), expr(Y).
+/*
+ * Rules:
+ */
+ term(X) :- factor(X).
+ term(X) :- append(Z,[*|Y], X), factor(Z), term(Y).
+/*
+ * Rules:
+ */
+ factor([X]) :- number(X).
+ factor(['('|Xs]) :- append(Y,[')'],Xs), expr(Y).
